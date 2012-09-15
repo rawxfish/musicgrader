@@ -8,6 +8,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :authentications
 
+  has_many :pieces, class_name: "Piece", inverse_of: :user, dependent: :destroy
+
+
   ## Database authenticatable
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
