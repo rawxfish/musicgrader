@@ -1,13 +1,12 @@
 Musicgrader::Application.routes.draw do
- 
 
-  get "authentications/create"
-
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
 
   root :to => "home#index"
-  resources :users, :only => :show
-  match '/auth/:provider/callback' => 'authentications#create'
+  resources :users
+  match '/users/:id', :to => 'users#show', :as => :user
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

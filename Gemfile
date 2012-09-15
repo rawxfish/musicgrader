@@ -20,12 +20,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "omniauth-facebook"
+gem "omniauth-facebook", "1.4.0"
 gem 'devise'
 gem 'omniauth'
 gem 'oauth2'
 gem 'bootstrap-sass'
-gem "paperclip", "~> 3.0"
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
