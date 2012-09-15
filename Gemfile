@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-
+gem "mongoid", "~> 3.0.0"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -20,6 +20,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "omniauth-facebook"
+gem 'devise'
+gem 'omniauth'
+gem 'oauth2'
+gem 'bootstrap-sass'
+gem "paperclip", "~> 3.0"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

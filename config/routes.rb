@@ -1,4 +1,13 @@
 Musicgrader::Application.routes.draw do
+ 
+
+  get "authentications/create"
+
+  devise_for :users
+
+  root :to => "home#index"
+  resources :users, :only => :show
+  match '/auth/:provider/callback' => 'authentications#create'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
