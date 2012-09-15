@@ -1,2 +1,9 @@
 <p>User: <%= @user.name %></p>
+<p> <% unless @user.pieces.nil? %>
+    <% @user.pieces.each do  |piece|%>
+	<%= piece.name %>
+   <% end %>
+   <% end %>
+</p>
+
 

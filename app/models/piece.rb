@@ -1,12 +1,13 @@
 class Piece
 	include Mongoid::Document
+	include Mongoid::Paperclip
 	field :name, type: String
 	field :user_id, type: Integer
 	field :correct_tempo, type: Float
 	field :beat_data, type: String
-	belongs_to :user, class_name:'User', inverse_of: :pieces
+	belongs_to :user, class_name: 'User', inverse_of: :pieces
 
-
+  has_mongoid_attached_file :attachment
 	def size
 		File.open(beat_data, "r").readlines.size - 1
 	end
@@ -39,7 +40,5 @@ class Piece
 	def z_test
 		z_score = (mean - correct_tempo) / (std_dev / Math.sqrt(size))
 	end
-
-
 
 end

@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'bootstrap-sass'
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem 'bootswatch-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
