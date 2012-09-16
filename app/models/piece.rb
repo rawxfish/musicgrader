@@ -8,6 +8,7 @@ class Piece
 	belongs_to :user, class_name: 'User', inverse_of: :pieces
 
   has_mongoid_attached_file :attachment
+	
 	def size
 		File.open(beat_data, "r").readlines.size - 1
 	end

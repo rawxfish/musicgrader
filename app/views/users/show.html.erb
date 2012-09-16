@@ -1,9 +1,12 @@
 <p>User: <%= @user.name %></p>
-<p> <% unless @user.pieces.nil? %>
-    <% @user.pieces.each do  |piece|%>
-	<%= piece.name %>
+<ul> <% unless @user.pieces.nil? %>
+    <% @user.pieces.each do |piece|%>
+	<li><%= piece.name %></li>
    <% end %>
    <% end %>
-</p>
+</ul>
 
+<p>
+	<%= render 'pieces/pieces_form'%>
+</p>
 

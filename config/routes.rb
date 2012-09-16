@@ -5,8 +5,9 @@ Musicgrader::Application.routes.draw do
   end
 
   root :to => "home#index"
-  resources :users
+  resources :users, :pieces
   match '/users/:id', :to => 'users#show', :as => :user
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
